@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MoviesService } from './services/movies.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'movie';
+
+  constructor(){}
 }

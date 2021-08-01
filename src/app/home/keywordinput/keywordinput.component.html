@@ -1,0 +1,7 @@
+<form [formGroup]="keywordForm">
+  <label>Enter a Movie Title:
+    <input type="text" formControlName="keyword" placeholder="Title">
+  </label>
+  <button id="search" (click)="onSubmit()">Search</button>
+  <app-results [childMessage]=movieData></app-results>
+</form>
