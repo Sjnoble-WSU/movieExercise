@@ -10,6 +10,7 @@ export class InfoPageComponent implements OnInit {
   imdbID: any;
   movieInfo: any;
   cast: any;
+  genre: any;
   constructor(private movie:MoviesService) { }
 
   ngOnInit(): void {
@@ -23,7 +24,8 @@ export class InfoPageComponent implements OnInit {
   saveMovieInfo(data: any) {
     this.movieInfo = data;
     this.cast = this.movieInfo.actors.replace(/ *, */g, '\n');
-    console.log(this.cast);
+    this.genre = this.movieInfo.genre.replace(/ *, */g, ' | ');
+    console.log(this.genre);
   }
 
 }
