@@ -24,11 +24,21 @@ export class MoviesService {
 
   getMovieInfo() {
     console.log(this.id);
+    console.log(localStorage.getItem('movieId'));
+    if(!this.id){
+      this.setId(localStorage.getItem('movieId'));
+    }
     return this.http.get(`https://gateway.maverik.com/movie/api/movie/${this.id}?source=omdb`).pipe();
   }
 
   setId(id: any) {
-    this.id = id;
+    if(id){
+      this.id = id;
+      localStorage.setItem('movieId', id);
+    }
+    if(localStorage.getItem('movieId')) {
+      this.id = localStorage.getItem('movieId');
+    }
   }
 
   getId() {
