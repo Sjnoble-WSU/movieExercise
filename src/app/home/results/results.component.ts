@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-results',
@@ -11,7 +11,7 @@ export class ResultsComponent implements OnInit {
   @Input() childMessage!: any;
   movieData: any;
 
-  constructor() {
+  constructor(private movie:MoviesService) {
   }
 
   ngOnInit() {
@@ -25,6 +25,11 @@ export class ResultsComponent implements OnInit {
   setData(data:any) {
     this.movieData = data;
     console.log(this.movieData);
+  }
+
+  test(movieId: any) {
+    this.movie.setId(movieId);
+    console.log(movieId);
   }
 
 }

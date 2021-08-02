@@ -1,7 +1,9 @@
-<form [formGroup]="keywordForm">
-  <label>Enter a Movie Title:
+<div class="root">
+  <form [formGroup]="keywordForm">
+    <label class="enter-movie">Enter a Movie Title:
+    </label>
     <input type="text" formControlName="keyword" placeholder="Title">
-  </label>
-  <button id="search" (click)="onSubmit()">Search</button>
+    <button id="search" (click)="onSubmit()">Search</button>
+  </form>
   <app-results [childMessage]=movieData></app-results>
-</form>
+</div>

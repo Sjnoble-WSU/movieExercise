@@ -33,7 +33,7 @@ export class KeywordinputComponent implements OnInit {
     console.log(keywords);
     const stripped = keywords.replace(/\s+/g, ',');
     console.log(stripped);
-    this.movie.getData(stripped).subscribe(data => {
+    this.movie.getMovieList(stripped).subscribe(data => {
       console.log(data);
       this.movieData = data;
     })

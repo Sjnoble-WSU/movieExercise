@@ -1,6 +1,6 @@
 <div class="results">
-  <div *ngFor="let movie of movieData" class="movieCard" routerLink="/info">
+  <div *ngFor="let movie of movieData" class="movieCard" routerLink="/info" (click)="test(movie.imdbID)">
       <img mat-card-image src={{movie.poster}}>
-    <mat-card>{{movie.title}}</mat-card>
+      <h4>{{movie.title}}</h4>
   </div>
 </div>

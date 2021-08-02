@@ -1,9 +1,42 @@
+.root{
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 body {
-  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );
+  background-size: cover;
   text-align: center;
   height: 100vh;
+  margin: 0;
+  max-height: 96vh;
+  overflow-y: hidden;
+}
+
+nav{
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 50px;
+}
+
+.title{
+  font-size: 1.5rem;
+  font-style: italic;
+  background-color: steelblue;
+  margin-top: 16px;
+  height: 50px;
+  padding: 0 10px;
+  padding-top: 4px;
+  margin-right: 10px;
+}
+
+a {
+  color: white;
+  font-size: 1.3rem;
 }
 
 form {
-  display: inline-block
+  display: inline-block;
 }

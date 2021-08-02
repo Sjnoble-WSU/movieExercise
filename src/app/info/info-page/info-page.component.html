@@ -1,1 +1,31 @@
-<p>info-page works!</p>
+<div class="root">
+  <div class="movie-card">
+    <img src={{movieInfo.poster}}>
+  <div class="movie-info">
+    <h2>{{movieInfo.title}}</h2>
+    <div class="info-line1">
+      <h4 class="rating">{{movieInfo.rated}}</h4>
+      <h4 class="other-info">{{movieInfo.year}}</h4>
+      <h4 class="other-info">{{movieInfo.genre}}</h4>
+      <h4 class="other-info">{{movieInfo.runtime}}</h4>
+    </div>
+    <div class="plot-div">
+      <p class="plot">{{movieInfo.plot}}</p>
+    </div>
+    <div class="additional-info">
+      <div class="info-box">
+        <h5>Cast</h5>
+        <h6 style="white-space: pre-line">{{this.cast}}</h6>
+      </div>
+      <div class="info-box">
+        <h5>Directed By</h5>
+        <h6>{{movieInfo.director}}</h6>
+      </div>
+      <div class="info-box">
+        <h5>Rating</h5>
+        <h6>{{movieInfo.imdbRating}}/10</h6>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

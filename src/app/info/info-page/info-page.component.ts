@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-info-page',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info-page.component.css']
 })
 export class InfoPageComponent implements OnInit {
-
-  constructor() { }
+  imdbID: any;
+  movieInfo: any;
+  cast: any;
+  constructor(private movie:MoviesService) { }
 
   ngOnInit(): void {
+    this.movie.getMovieInfo().subscribe(async data => {
+      console.log(data);
+      this.saveMovieInfo(data);
+    });
+
+  }
+
+  saveMovieInfo(data: any) {
+    this.movieInfo = data;
+    this.cast = this.movieInfo.actors.replace(/ *, */g, '\n');
+    console.log(this.cast);
   }
 
 }
